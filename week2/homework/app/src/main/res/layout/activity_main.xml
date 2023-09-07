@@ -10,8 +10,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:titleTextColor="@color/white"
         android:background="#0000FF"
+        android:titleTextColor="@color/white"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
@@ -20,82 +20,154 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:background="?attr/actionBarItemBackground"
-            android:src="@drawable/ic_menu"/>
+            android:src="@drawable/ic_menu" />
 
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:id="@+id/select_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:orientation="vertical"
-        android:background="@android:color/white"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        >
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:id="@+id/title_text"
-            android:text="Welcome Homer"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:layout_marginTop="16dp"
+            android:text="Welcome Homer"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/subtitle_text"
-            android:text="Please Give Generously"
-            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"/>
+            android:layout_marginTop="32dp"
+            android:text="Please Give Generously" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent">
+            android:layout_marginTop="32dp"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:orientation="horizontal">
 
             <RadioGroup
                 android:id="@+id/radio_group"
-                android:layout_gravity="left"
                 android:layout_width="match_parent"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                >
+                android:layout_gravity="left"
+                android:layout_weight="1">
 
                 <RadioButton
                     android:id="@+id/radio_paypal"
-                    android:text="PayPal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    />
+                    android:text="PayPal" />
 
                 <RadioButton
                     android:id="@+id/radio_direct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Direct"/>
+                    android:text="Direct" />
 
             </RadioGroup>
 
             <NumberPicker
                 android:id="@+id/number_picker"
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="19dp"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:progressDrawable="@drawable/progress_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_type" />
+
+    <LinearLayout
+        android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amount_input"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:hint="Enter amount"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/donate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donate"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/total_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="Total so Far $1998"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/fab_mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="#FFFFFF"
+        app:elevation="6dp"
+        app:shapeAppearanceOverlay="@style/RoundedFAB"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
