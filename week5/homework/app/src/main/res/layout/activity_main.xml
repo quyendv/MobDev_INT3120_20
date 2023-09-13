@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="40dp" />
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="40dp">
+
+            <!--            <include layout="@layout/framelayout1_analog" />-->
+
+            <!--            <include layout="@layout/framelayout2" />-->
+
+            <AnalogClock
+                android:id="@+id/tab1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true" />
+
+            <LinearLayout
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/design_default_color_background"
+                    android:text="Person Name"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/editTextPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Person"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/clickBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Click" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </TabHost>
+</LinearLayout>
+
