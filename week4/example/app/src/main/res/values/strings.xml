@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hw4-example</string>
+    <string name="selected_text">Selected Text:</string>
+    <string name="autoCompleteTextview">AutoCompleteTextView</string>
+</resources>

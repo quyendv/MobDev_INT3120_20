@@ -1,67 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <TabHost
-        android:id="@+id/tabHost"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <TabWidget
-            android:id="@android:id/tabs"
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="40dp" />
+            android:layout_gravity="center"
+            app:title="Week 5" />
 
-        <FrameLayout
-            android:id="@android:id/tabcontent"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="40dp">
+            android:layout_height="wrap_content" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <!--            <include layout="@layout/framelayout1_analog" />-->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-            <!--            <include layout="@layout/framelayout2" />-->
-
-            <AnalogClock
-                android:id="@+id/tab1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true" />
-
-            <LinearLayout
-                android:id="@+id/tab2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/label1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/design_default_color_background"
-                    android:text="Person Name"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/editTextPerson"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Person"
-                    android:textSize="18sp" />
-
-                <Button
-                    android:id="@+id/clickBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Click" />
-            </LinearLayout>
-
-        </FrameLayout>
-
-    </TabHost>
 </LinearLayout>
-

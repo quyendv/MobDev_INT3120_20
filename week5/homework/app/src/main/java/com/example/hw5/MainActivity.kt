@@ -2,26 +2,41 @@ package com.example.hw5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TabHost
+import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var viewPager: ViewPager2
+    private lateinit var tabLayout: TabLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tabs = findViewById<TabHost>(R.id.tabHost);
-        tabs.setup()
+        viewPager = findViewById(R.id.pager)
+        tabLayout = findViewById(R.id.tab)
 
-        val spec1  = tabs.newTabSpec("tab1");
-        spec1.setContent(R.id.tab1);
-        spec1.setIndicator("1 - Clock");
-        tabs.addTab(spec1);
+        val fragments = listOf(DateFragment(), TimeFragment())
+        val adapter = ViewPagerAdapter(this, fragments)
+        viewPager.adapter = adapter
 
-        val spec2 = tabs.newTabSpec("tab2");
-        spec2.setContent(R.id.tab2);
-        spec2.setIndicator("2 - Person");
-        tabs.addTab(spec2);
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            when (position) {
+                0 -> tab.text = "Date"
+                1 -> tab.text = "Time"
+            }
+        }.attach()
+    }
 
-        tabs.currentTab = 0;
+    private inner class ViewPagerAdapter(
+        activity: AppCompatActivity,
+        private val fragments: List<Fragment>
+    ) : FragmentStateAdapter(activity) {
+        override fun getItemCount(): Int = fragments.size
+        override fun createFragment(position: Int): Fragment = fragments[position]
     }
 }
