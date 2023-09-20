@@ -8,4 +8,8 @@
     <string name="back_btn">Back</string>
     <string name="title_activity_greeting">GreetingActivity</string>
     <string name="feedback_hint">((Feedback))</string>
+    <string name="dialBtn">Dial</string>
+    <string name="google_view">Google</string>
+    <string name="contact">Contact</string>
+    <string name="images">Images</string>
 </resources>

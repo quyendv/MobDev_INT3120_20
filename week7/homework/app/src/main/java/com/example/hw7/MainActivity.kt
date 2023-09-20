@@ -3,6 +3,7 @@ package com.example.hw7
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,10 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
     private val REQUEST_CODE = 100
     private lateinit var feedbackText: TextView
+    private lateinit var dialBtn: Button
+    private lateinit var googleView: Button
+    private lateinit var contactView: Button
+    private lateinit var imageView: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         val editText = findViewById<EditText>(R.id.editText);
         feedbackText = findViewById<TextView>(R.id.feedbackMsg)
+        dialBtn = findViewById(R.id.dialBtn)
+        googleView = findViewById(R.id.google_viewBtn)
+        contactView = findViewById(R.id.contactView)
+        imageView = findViewById(R.id.imageView)
 
         val sendMsgBtn = findViewById<Button>(R.id.sendMsgBtn);
         sendMsgBtn.setOnClickListener {
@@ -30,6 +39,24 @@ class MainActivity : AppCompatActivity() {
 
             // startActivity(intent)
             startActivityForResult(intent, REQUEST_CODE)
+        }
+
+        dialBtn.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:123"))
+            startActivity(intent)
+        }
+        googleView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
+            startActivity(intent)
+        }
+        contactView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts//people"))
+            startActivity(intent)
+        }
+        imageView.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/pictures/*"
+            startActivity(intent)
         }
     }
 
