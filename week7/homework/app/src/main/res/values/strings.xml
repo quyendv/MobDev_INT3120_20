@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">hw7</string>
+    <string name="full_name">Full name:</string>
+    <string name="send_message_to_greeting_activity">Hello, Please say hello me!</string>
+    <string name="feedback_from_greeting_activity">Feedback from Greeting Activity:</string>
+    <string name="message_sent_from_main_activity">Message sent from Main Activity:</string>
+    <string name="greeting_hint">((Message))</string>
+    <string name="back_btn">Back</string>
+    <string name="title_activity_greeting">GreetingActivity</string>
+    <string name="feedback_hint">((Feedback))</string>
+</resources>

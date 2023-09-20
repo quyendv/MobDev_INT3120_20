@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">hw</string>
+    <string name="item1">Item1</string>
+    <string name="item2">Item2</string>
+    <string name="item3">Item3</string>
+    <string name="item4">Item4</string>
+    <string name="item_4_1">Item 4.1</string>
+    <string name="item_4_2">Item 4.2</string>
+    <string name="context_item_1">Context Item 1</string>
+    <string name="context_item_2">Context Item 2</string>
+    <string name="hold">Hold to show Context Menu</string>
+    <string name="popup_item_1">Popup Item 1</string>
+    <string name="show_popup_menu">Show popup menu</string>
+</resources>
