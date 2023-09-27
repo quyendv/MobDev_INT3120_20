@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Hw4example"
         tools:targetApi="31">
         <activity
+            android:name=".EssentialConstraintActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DonationConstraintActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

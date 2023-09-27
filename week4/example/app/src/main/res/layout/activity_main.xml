@@ -7,12 +7,18 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/popupMenu"
+        android:text="Change Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <!-- TextView: Selected -->
     <TextView
         android:id="@+id/sharedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:layout_marginBottom="16dp"
         android:text="@string/selected_text"
         android:textSize="18sp"

@@ -2,4 +2,24 @@
     <string name="app_name">hw4-example</string>
     <string name="selected_text">Selected Text:</string>
     <string name="autoCompleteTextview">AutoCompleteTextView</string>
+    <string name="toolbar_tittle">Essentials of Developing Android 5.0</string>
+
+    <string name="placeholder_name">Enter your name</string>
+    <string name="placeholder_phone">Enter your phone number</string>
+
+    <string name="radio_cheese1">Cheese</string>
+    <string name="radio_cheese2">2 x Cheese</string>
+    <string name="radio_cheese3">None</string>
+
+    <string name="radio_shape1">Square</string>
+    <string name="radio_shape2">Round</string>
+
+    <string name="checkbox1">Peperoni</string>
+    <string name="checkbox2">Mushroom</string>
+    <string name="checkbox3">Veggies</string>
+
+    <string name="placeholder_ordering">Your ordering:</string>
+
+    <string name="exit_btn">Exit</string>
+    <string name="sms_btn">SMS - Place you order</string>
 </resources>
