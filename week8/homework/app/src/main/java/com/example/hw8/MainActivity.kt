@@ -5,16 +5,17 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    private val myReceiver = MyReceiver()
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val myReceiver = MyReceiver()
         val intentFilter = IntentFilter()
         intentFilter.addAction("com.example.BROADCAST")
 
@@ -28,5 +29,18 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("message", message)
             sendBroadcast(intent)
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unregisterReceiver(myReceiver)
+        Log.d("MainActivity", "Unregister success by onStop")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        val message = "Activity was destroyed"
+        Log.d("MainActivity", message)
     }
 }
