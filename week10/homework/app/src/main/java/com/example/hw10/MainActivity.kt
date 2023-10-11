@@ -51,10 +51,30 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
             val email = editTextEmail.text.toString()
             if (email.isNotEmpty()) {
                 // add User through Content Provider
-                val values = ContentValues().apply {
-                    put(UserDatabaseHelper.COLUMN_EMAIL, email)
-                }
-                contentResolver.insert(UserContentProvider.CONTENT_URI, values)
+                // val values = ContentValues().apply {
+                //     put(UserDatabaseHelper.COLUMN_EMAIL, email)
+                // }
+                // contentResolver.insert(UserContentProvider.CONTENT_URI, values)
+
+                val valuesList = ArrayList<ContentValues>()
+
+                valuesList.add(ContentValues().apply {
+                    put(UserDatabaseHelper.COLUMN_EMAIL, "email1")
+                })
+                valuesList.add(ContentValues().apply {
+                    put(UserDatabaseHelper.COLUMN_EMAIL, "email2")
+                })
+                valuesList.add(ContentValues().apply {
+                    put(UserDatabaseHelper.COLUMN_EMAIL, "email3")
+                })
+                valuesList.add(ContentValues().apply {
+                    put(UserDatabaseHelper.COLUMN_EMAIL, "email4")
+                })
+                valuesList.add (ContentValues().apply {
+                    put(UserDatabaseHelper.COLUMN_EMAIL, "email5")
+                })
+
+                contentResolver.bulkInsert(UserContentProvider.CONTENT_URI, valuesList.toTypedArray())
 
                 // Clear text EditText
                 editTextEmail.text.clear()
